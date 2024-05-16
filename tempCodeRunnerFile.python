@@ -1,0 +1,14 @@
+import json
+import requests
+
+data = {"prompt": "PHPってなに?"}
+
+json_data = json.dumps(data)
+
+response = requests.get(
+    "https://api.natsukiproject.com/v1/s1/1b", 
+    data=data,
+)
+
+print(response.status_code)
+print(response.text)
