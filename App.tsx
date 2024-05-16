@@ -57,7 +57,7 @@ const Settings: List[] = [
 ];
 const Chats: List[] = [
     {
-        title: "NatsukiAI",
+        title: "natsukiAI",
         instruct: "Let's ask a question!",
     },
 ];
