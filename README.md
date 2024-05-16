@@ -1,6 +1,8 @@
-#まだできてないけど開発手伝いたいっていう狂人のために
+# まだできてないけど開発手伝いたいっていう狂人のために
 ReactNativeのインストールは[こちら](https://learn.microsoft.com/ja-jp/windows/dev-environment/javascript/react-native-for-android)
+
 上にもあると思いますがpackage.jsonをこのように記述, `npm install`
+
 ```json
 {
   "name": "takosformobile",
