@@ -2,3 +2,5 @@
 ReactNativeのインストールは[こちら](https://learn.microsoft.com/ja-jp/windows/dev-environment/javascript/react-native-for-android)
 
 もろもろいれたらここにcdして`npm install`
+
+It was developed with Javascript,Typescript, React Native.
