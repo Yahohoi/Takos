@@ -10,7 +10,10 @@ import ImagePicker from 'react-native-image-crop-picker';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { VirtualizedList, ScrollView, StyleSheet, Text, View, Pressable, Image, AppRegistry, SectionList, TextInput, FlatList, } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+import { Provider as PaperProvider, BottomNavigation, Text } from 'react-native-paper';
+import AppNavigator from './components/AppNavigator';
+import { StyleSheet, View, Pressable, Image, AppRegistry, SectionList, TextInput, FlatList, } from 'react-native';
 //import {*} from 'react-native-elements'
 
 type Props = {};
@@ -109,13 +112,6 @@ function Home({navigation}) {
         <Text style={styles.usernameText}>{username}</Text>
       </View>
       <TextInput placeholder=" Find your chats" style={styles.input} />
-      <Pressable style={styles.buttonStyle} onPress={() => navigation.navigate('Settings') }>
-        <Image style={styles.settingButton} source={require(".//icons//9690-600x600.jpg")}/>
-      </Pressable>
-      <FlatList
-        data={Chats}
-        renderItem={({item}) => <ChatItem title={item.title} />}
-      />
     </View>
     );
 }
@@ -133,22 +129,26 @@ function SettingsWindow({navigation}) {
 
 function ChatWindow({navigation}) {
     return (
-        <View>
-
+        <View style={styles.container}>
+          <TextInput placeholder=" Find your chats" style={styles.input} />
         </View>
     )
+}
+
+const BottomComponents = () => {
+  const [index,setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'home', title: 'Home', icon:'home'},
+    { key: 'home', title: 'Home', icon:'home'},
+  ])
 }
 
 export default class App extends Component<Props> {
   render() {
     return (
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home}/>
-          <Tab.Screen name="Settings" component={SettingsWindow} />
-          <Tab.Screen name="Chat" component={ChatWindow} />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <PaperProvider>
+        <AppNavigator />
+      </PaperProvider>
     );
   }
 }
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   listBox: {
-  flexDirection: 'row',
+    flexDirection: 'row',
     color: '#ffffff',
     borderColor: '#d9e7ff',
     borderRadius: 10,
