@@ -1,4 +1,9 @@
+
 /**
+{ key: 'home', title: 'Home', focusedIcon: 'home', unfocusedIcon: 'home-outline', },
+{ key: 'settings', title: 'Settings', focusedIcon: 'account-settings', unfocusedIcon: 'account-settings-outline', },
+{ key: 'chats', title: 'Chats', focusedIcon: 'message', unfocusedIcon: 'message-outline', },
+{ key: 'ai', title: 'AI', focusedIcon: 'robot', unfocusedIcon: 'robot-outline', },
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
@@ -12,10 +17,121 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Provider as PaperProvider, BottomNavigation, Text } from 'react-native-paper';
-import AppNavigator from './components/AppNavigator';
+import MyComponent from './components/AppNavigator';
 import { StyleSheet, View, Pressable, Image, AppRegistry, SectionList, TextInput, FlatList, } from 'react-native';
 //import {*} from 'react-native-elements'
 
+
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <PaperProvider>
+        <MyComponent />
+      </PaperProvider>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  chatWordsMine:{
+    color: "#e82b00",
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    borderBottomLeftRadius: 30,
+  },
+  chatWordsOther:{
+    color: "#e82b00",
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    borderBottomRightRadius: 30,
+  },
+  chatWords: {
+    fontSize:20,
+    color:'black',
+  },
+  time: {
+    fontSize:10,
+    color:'#b3b3b3'
+  },
+  settingText: {
+    fontWeight: 'bold',
+    color:'#000000',
+    fontSize: 25,
+    alignItems:'center',
+  },
+  chatIcon:{
+    width:50,
+    height:50,
+    borderRadius: 50,
+    alignItems:'center',
+  },
+  settingButton:{
+    width:40,
+    height:40,
+  },
+  settingSubText: {
+    color:'#000000',
+    fontSize: 10,
+  },
+  listBox: {
+    flexDirection: 'row',
+    color: '#ffffff',
+    borderColor: '#d9e7ff',
+    borderRadius: 10,
+    padding: 10,
+    marginVertical:2,
+    marginHorizontal:4,
+  },
+  container: {
+    flexDirection: 'column',
+    backgroundColor: '#ffffff'
+  },
+  input: {
+    width:'94%',
+    flexDirection:'column',
+    height: 40,
+    borderWidth: 1,
+    borderRadius: 10,
+    margin: 12,
+    alignItems: 'center',
+    position: 'relative',
+    top: 5,
+    backgroundColor: '#f0f0f0',
+    borderColor: "#f0f0f0",
+  },
+  header: {
+    flex: 1,
+  },
+  profile: {
+    flexDirection: 'row',
+    position: 'relative',
+    top: 10,
+    left: 10,
+  },
+  texts: {
+    flexDirection: 'row',
+    top: 15,
+    left: 15,
+  },
+  usernameText: {
+    flexDirection: 'column',
+    fontSize: 30,
+    color: '#000000',
+    position: 'relative',
+    top:7.5,
+    left:10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logo: {
+    width:70,
+    height:70,
+    borderRadius: 50,
+  },
+});
+
+export default App;
+/*
 type Props = {};
 
 const Tab = createBottomTabNavigator();
@@ -142,113 +258,4 @@ const BottomComponents = () => {
     { key: 'home', title: 'Home', icon:'home'},
   ])
 }
-
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <PaperProvider>
-        <AppNavigator />
-      </PaperProvider>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  chatWordsMine:{
-    color: "#e82b00",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    borderBottomLeftRadius: 30,
-  },
-  chatWordsOther:{
-    color: "#e82b00",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    borderBottomRightRadius: 30,
-  },
-  chatWords: {
-    fontSize:20,
-    color:'black',
-  },
-  time: {
-    fontSize:10,
-    color:'#b3b3b3'
-  },
-  settingText: {
-    fontWeight: 'bold',
-    color:'#000000',
-    fontSize: 25,
-    alignItems:'center',
-  },
-  chatIcon:{
-    width:50,
-    height:50,
-    borderRadius: 50,
-    alignItems:'center',
-  },
-  settingButton:{
-    width:40,
-    height:40,
-  },
-  settingSubText: {
-    color:'#000000',
-    fontSize: 10,
-  },
-  listBox: {
-    flexDirection: 'row',
-    color: '#ffffff',
-    borderColor: '#d9e7ff',
-    borderRadius: 10,
-    padding: 10,
-    marginVertical:2,
-    marginHorizontal:4,
-  },
-  container: {
-    flexDirection: 'column',
-    backgroundColor: '#ffffff'
-  },
-  input: {
-    width:'94%',
-    flexDirection:'column',
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 10,
-    margin: 12,
-    alignItems: 'center',
-    position: 'relative',
-    top: 5,
-    backgroundColor: '#f0f0f0',
-    borderColor: "#f0f0f0",
-  },
-  header: {
-    flex: 1,
-  },
-  profile: {
-    flexDirection: 'row',
-    position: 'relative',
-    top: 10,
-    left: 10,
-  },
-  texts: {
-    flexDirection: 'row',
-    top: 15,
-    left: 15,
-  },
-  usernameText: {
-    flexDirection: 'column',
-    fontSize: 30,
-    color: '#000000',
-    position: 'relative',
-    top:7.5,
-    left:10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    width:70,
-    height:70,
-    borderRadius: 50,
-  },
-});
-
-export default App;
+*/
