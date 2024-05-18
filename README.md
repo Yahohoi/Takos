@@ -7,4 +7,3 @@ ReactNativeのインストールは[こちら](https://learn.microsoft.com/ja-jp
 もろもろいれたらここにcdして`npm install`
 
 It was developed with Javascript,Typescript, React Native.
->>>>>>> 01bfd2840990da154acd9ab17cc75f825fe596df
