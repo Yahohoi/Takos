@@ -2,9 +2,8 @@
 ReactNativeのインストールは[こちら](https://learn.microsoft.com/ja-jp/windows/dev-environment/javascript/react-native-for-android)
 `cd TakosForMobile`
 `npm install`
-=======
+
 
 もろもろいれたらここにcdして`npm install`
 
 It was developed with Javascript,Typescript, React Native.
->>>>>>> 01bfd2840990da154acd9ab17cc75f825fe596df
