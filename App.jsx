@@ -1,9 +1,13 @@
-import React, { Component } from 'react'
-import { Provider as PaperProvider } from 'react-native-paper'
+import React, { Component } from 'react';
+import { Provider as PaperProvider } from 'react-native-paper';
 import { BottomNavigation, Text } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import HomeRoute from './components/Home';
+import Login from './components/Login'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const HomeRoute = () => <Text>Albums</Text>;
+const Stack = createNativeStackNavigator();
 
 const settingsRoute = () => <Text>Recents</Text>;
 
@@ -36,12 +40,11 @@ const AppNavigator = () => {
     );
 }
 
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <PaperProvider>
-        <AppNavigator />
-      </PaperProvider>
-    );
-  }
+function App() {
+  return (
+    <Login/>
+  );
 }
+
+
+export default App;

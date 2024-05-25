@@ -17,7 +17,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Provider as PaperProvider, BottomNavigation, Text } from 'react-native-paper';
-import MyComponent from './components/AppNavigator';
+import MyComponent from './components/Home';
 import { StyleSheet, View, Pressable, Image, AppRegistry, SectionList, TextInput, FlatList, } from 'react-native';
 //import {*} from 'react-native-elements'
 
@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
 /*
 type Props = {};
 
